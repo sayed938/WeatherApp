@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/list_of_cities"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/add_city"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/reload_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toEndOf="@+id/location_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Cairo"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/list_of_cities"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/icon_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.027"
+                app:layout_constraintStart_toEndOf="@+id/city_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/temp_degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="28º"
+                android:textColor="@color/white"
+                android:textSize="50sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.105"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/city_name" />
+
+            <TextView
+                android:id="@+id/weather_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunny"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.095"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/temp_degree" />
+
+            <TextView
+                android:id="@+id/max_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="17dp"
+                android:text="29º"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weather_condition"
+                app:layout_constraintVertical_bias="0.023" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/min_max_temp_style"
+                android:text=" /"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/max_temp"
+                app:layout_constraintTop_toBottomOf="@+id/weather_condition" />
+
+            <TextView
+                android:id="@+id/min_temp"
+                style="@style/min_max_temp_style"
+                android:text=" 16º"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.038"
+                app:layout_constraintStart_toEndOf="@+id/max_temp"
+                app:layout_constraintTop_toBottomOf="@+id/weather_condition" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/min_max_temp_style"
+                android:text="Feels like "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toEndOf="@+id/min_temp"
+                app:layout_constraintTop_toBottomOf="@+id/weather_condition" />
+
+            <TextView
+                android:id="@+id/temp_degree2"
+                style="@style/min_max_temp_style"
+                android:text="28º"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/weather_condition" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="290dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/card_color"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <ImageView
+                    style="@style/icon_card_style"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/umbrella" />
+
+                <TextView
+                    style="@style/numbers_card_style"
+                    android:layout_marginStart="38dp"
+                    android:text="30%" />
+
+                <TextView
+                    style="@style/text_card_style"
+                    android:layout_marginStart="12dp"
+                    android:text="Precipitation" />
+
+                <ImageView
+                    style="@style/icon_card_style"
+                    android:layout_marginStart="134dp"
+                    android:background="@drawable/water" />
+
+                <TextView
+                    style="@style/numbers_card_style"
+                    android:layout_marginStart="134dp"
+                    android:text="30%" />
+
+                <TextView
+                    style="@style/text_card_style"
+                    android:layout_marginStart="120dp"
+                    android:text="Humidity" />
+
+                <ImageView
+                    style="@style/icon_card_style"
+                    android:layout_marginStart="225dp"
+                    android:background="@drawable/wind" />
+
+                <TextView
+                    style="@style/numbers_card_style"
+                    android:layout_marginStart="225dp"
+                    android:text="30%" />
+
+                <TextView
+                    style="@style/text_card_style"
+                    android:layout_marginStart="195dp"
+                    android:text="Wind Speed" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Today"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_today_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:spanCount="6"
+                tools:itemCount="6"
+                tools:listitem="@layout/today_temp_custom" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/card_color"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rc_today_temp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_next_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rc_today_temp"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/next_days_custom" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="330dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/card_color"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <ImageView
+                    style="@style/rise_set_img_style"
+                    android:background="@drawable/sun" />
+
+                <TextView
+                    style="@style/rise_set_style"
+                    android:layout_marginStart="30dp"
+                    android:text="Sunrise" />
+
+                <TextView
+                    style="@style/rise_set_time_style"
+                    android:layout_marginStart="21dp"
+                    android:text="5:30 am" />
+
+                <TextView
+                    style="@style/rise_set_style"
+                    android:layout_marginStart="250dp"
+                    android:text="Sunset" />
+
+                <TextView
+                    style="@style/rise_set_time_style"
+                    android:layout_marginStart="238dp"
+                    android:text="6:21 pm" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="330dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="@color/card_color"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" >
+                <ImageView
+                    style="@style/rise_set_img_style"
+                    android:background="@drawable/moon" />
+
+                <TextView
+                    style="@style/rise_set_style"
+                    android:layout_marginStart="30dp"
+                    android:text="Moonrise" />
+
+                <TextView
+                    style="@style/rise_set_time_style"
+                    android:layout_marginStart="21dp"
+                    android:text=" 7:30 am" />
+
+                <TextView
+                    style="@style/rise_set_style"
+                    android:layout_marginStart="250dp"
+                    android:text="Moonset" />
+
+                <TextView
+                    style="@style/rise_set_time_style"
+                    android:layout_marginStart="238dp"
+                    android:text="9:21 pm" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
