@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    /*id("kotlin-kapt")
+    id("kotlin-android")
+    id("dagger.hilt.android.plugin")*/
 }
 
 android {
@@ -46,4 +49,31 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+/*//Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // ViewModel and LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.ktx)
+
+    //coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+*/
+    //hilt
+    //implementation(libs.hilt.android)
+    /*implementation("com.google.dagger:hilt-android")
+    implementation("com.google.dagger:hilt-compiler")*/
+   //kapt(libs.hilt.android.compiler)
+    /*kapt(libs.androidx.hilt.compiler)
+    //noinspection UseTomlInstead
+    kapt("androidx.hilt:hilt-compiler:1.2.0")*/
+
+
+    //Picasso
+    //implementation(libs.picasso)
 }

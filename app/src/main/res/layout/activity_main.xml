@@ -265,7 +265,7 @@
 
                 <ImageView
                     style="@style/rise_set_img_style"
-                    android:background="@drawable/sun" />
+                    android:background="@drawable/sun_img" />
 
                 <TextView
                     style="@style/rise_set_style"
