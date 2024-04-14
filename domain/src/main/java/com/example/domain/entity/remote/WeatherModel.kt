@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.entity.remote
 
 data class WeatherModel(
     val current: Current,

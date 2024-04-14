@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.entity.remote
 
 data class Astro(
     val is_moon_up: Int,

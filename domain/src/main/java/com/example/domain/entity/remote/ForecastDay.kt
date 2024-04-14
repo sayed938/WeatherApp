@@ -1,6 +1,6 @@
-package com.example.domain.entity
+package com.example.domain.entity.remote
 
-data class Forecastday(
+data class ForecastDay(
     val astro: Astro,
     val date: String,
     val date_epoch: Int,

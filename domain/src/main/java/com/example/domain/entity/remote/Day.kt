@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.entity.remote
 
 data class Day(
     val avghumidity: Int,
