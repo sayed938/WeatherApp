@@ -1,9 +1,8 @@
-package com.example.weatherapp
+package com.example.weatherapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherapp.databinding.ActivityFavoriteCitiesBinding
-import com.example.weatherapp.databinding.ActivityMainBinding
 
 class FavoriteCities : AppCompatActivity() {
     private lateinit var binding: ActivityFavoriteCitiesBinding

@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    /*id("kotlin-kapt")
+    id("kotlin-kapt")
     id("kotlin-android")
-    id("dagger.hilt.android.plugin")*/
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -37,10 +37,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
 }
 
 dependencies {
-
+    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -49,12 +51,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //hilt
+    implementation (libs.hilt.android.v2511)
 
-/*//Retrofit
+    //implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    kapt(libs.androidx.hilt.compiler)
+
+    //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    // ViewModel and LiveData
+    /*// ViewModel and LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -64,15 +72,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
 */
-    //hilt
-    //implementation(libs.hilt.android)
-    /*implementation("com.google.dagger:hilt-android")
-    implementation("com.google.dagger:hilt-compiler")*/
-   //kapt(libs.hilt.android.compiler)
-    /*kapt(libs.androidx.hilt.compiler)
-    //noinspection UseTomlInstead
-    kapt("androidx.hilt:hilt-compiler:1.2.0")*/
-
 
     //Picasso
     //implementation(libs.picasso)
