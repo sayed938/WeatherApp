@@ -1,5 +1,6 @@
 package com.example.domain.entity.remote
 
+
 data class ForecastDay(
     val astro: Astro,
     val date: String,
@@ -7,3 +8,5 @@ data class ForecastDay(
     val day: Day,
     val hour: List<Hour>
 )
+
+

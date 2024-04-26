@@ -1,9 +1,13 @@
-package com.example.weatherapp.ui
+package com.example.weatherapp.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherapp.databinding.ActivityFavoriteCitiesBinding
+import com.example.weatherapp.ui.ActivitiesIntents
+import com.example.weatherapp.ui.IconAnimation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoriteCities : AppCompatActivity() {
     private lateinit var binding: ActivityFavoriteCitiesBinding
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -37,4 +38,10 @@ object NetworkModule {
     fun provideTempService(retrofit: Retrofit): TempApiService {
         return retrofit.create(TempApiService::class.java)
     }
+    /*@Provides
+    @Singleton
+    @Named("cityName")
+    fun provideCityName(city:String):String{
+        return city
+    }*/
 }

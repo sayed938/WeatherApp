@@ -3,6 +3,8 @@ package com.example.weatherapp.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.content.ContextCompat.startActivity
+import com.example.weatherapp.ui.activities.FavoriteCities
+import com.example.weatherapp.ui.activities.MainActivity
 
 object ActivitiesIntents {
 

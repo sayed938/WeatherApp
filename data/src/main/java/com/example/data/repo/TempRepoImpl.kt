@@ -6,5 +6,5 @@ import com.example.domain.entity.remote.WeatherModel
 import com.example.domain.repo.GetTempRepo
 
 class TempRepoImpl(private val tempService:TempApiService,private val city:String):GetTempRepo {
-    override fun getTempRepo(): WeatherModel =tempService.getTempRemotely(PublicData.apiKey,city,5)
+    override suspend fun getTempRepo(): WeatherModel =tempService.getTempRemotely(PublicData.apiKey,city,5)
 }

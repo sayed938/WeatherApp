@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:textColor="@color/white"
                 android:textSize="50sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.105"
+                app:layout_constraintHorizontal_bias="0.102"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/city_name" />
 
@@ -160,6 +160,7 @@
                     android:background="@drawable/umbrella" />
 
                 <TextView
+                    android:id="@+id/current_precipitation"
                     style="@style/numbers_card_style"
                     android:layout_marginStart="38dp"
                     android:text="30%" />
@@ -175,6 +176,7 @@
                     android:background="@drawable/water" />
 
                 <TextView
+                    android:id="@+id/current_humidity"
                     style="@style/numbers_card_style"
                     android:layout_marginStart="134dp"
                     android:text="30%" />
@@ -190,13 +192,16 @@
                     android:background="@drawable/wind" />
 
                 <TextView
+                    android:id="@+id/current_wind"
                     style="@style/numbers_card_style"
-                    android:layout_marginStart="225dp"
+                    android:layout_marginStart="216dp"
                     android:text="30%" />
 
                 <TextView
                     style="@style/text_card_style"
-                    android:layout_marginStart="195dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
                     android:text="Wind Speed" />
             </androidx.cardview.widget.CardView>
 
@@ -323,6 +328,17 @@
                     android:layout_marginStart="238dp"
                     android:text="9:21 pm" />
             </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,27 +52,25 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     //hilt
-    implementation (libs.hilt.android.v2511)
-
-    //implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.android.v2511)
+    kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
 
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    /*// ViewModel and LiveData
+    //coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+     // ViewModel and LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.ktx)
 
-    //coroutines
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.core)
-*/
 
     //Picasso
-    //implementation(libs.picasso)
+    implementation(libs.picasso)
 }

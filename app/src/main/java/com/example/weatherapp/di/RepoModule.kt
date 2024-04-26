@@ -7,12 +7,13 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepoModule {
+object RepoModule{
     @Provides
-    fun provideTempRepo(tempService: TempApiService, city: String): GetTempRepo {
-        return TempRepoImpl(tempService, city)
+    fun provideTempRepo (tempService: TempApiService): GetTempRepo {
+        return TempRepoImpl(tempService, "cairo")
     }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".ui.FavoriteCities">
+    tools:context=".ui.activities.FavoriteCities">
 
     <ImageView
         android:id="@+id/back_to_main"
