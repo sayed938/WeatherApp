@@ -25,3 +25,8 @@ data class Current(
     val wind_kph: Double,
     val wind_mph: Double
 )
+data class Condition(
+    val text: String,
+    val icon: String,
+    val code: Long,
+)

@@ -1,9 +1,9 @@
 package com.example.domain.entity.remote
 
 data class Astro(
-    val is_moon_up: Int,
-    val is_sun_up: Int,
-    val moon_illumination: Int,
+    val is_moon_up: Long,
+    val is_sun_up: Long,
+    val moon_illumination: Long,
     val moon_phase: String,
     val moonrise: String,
     val moonset: String,

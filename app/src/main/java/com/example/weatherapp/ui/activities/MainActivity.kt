@@ -20,7 +20,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.math.round
 import kotlin.math.roundToInt
 
 @AndroidEntryPoint
@@ -51,11 +50,11 @@ class MainActivity : AppCompatActivity() {
         delay(1000)
         displayCurrentTemp(weather)
         displayCurrentWeather(weather)
-        /*try {
-            displayHourlyTemp(weather?.forecast?.forecastDay?.get(0)!!.hour)
+        try {
+            weather?.forecast?.forecastday?.get(0)?.let { displayHourlyTemp(it.hour) }
         } catch (e: Exception) {
-            Log.d("error_hour", e.message.toString())
-        }*/
+            Log.d("sa-hour-adapter", weather?.forecast?.forecastday?.get(0)!!.hour.toString())
+        }
     }
 
     private fun mainToFavoriteIntent(option: Bundle?) {
@@ -72,11 +71,11 @@ class MainActivity : AppCompatActivity() {
                 currentWeather.current?.temp_c?.roundToInt()?.toString() + "º"
             binding.weatherCondition.text = currentWeather.current?.condition?.text.toString()
             binding.maxTemp.text =
-                currentWeather.forecast?.forecastDay?.get(0)?.day?.maxtemp_c?.roundToInt()
+                currentWeather.forecast?.forecastday?.get(0)?.day?.maxtemp_c?.roundToInt()
                     .toString() + "º"
 
             binding.minTemp.text =
-                currentWeather.forecast?.forecastDay?.get(0)?.day?.mintemp_c?.roundToInt()
+                currentWeather.forecast?.forecastday?.get(0)?.day?.mintemp_c?.roundToInt()
                     .toString() + "º"
 
             binding.tempDegree2.text =
@@ -98,8 +97,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayHourlyTemp(lsHourly: List<Hour>) {
-
-        binding.rcTodayTemp.layoutManager = LinearLayoutManager(this)
+        binding.rcTodayTemp.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rcTodayTemp.adapter = HourlyAdapter(lsHourly)
     }
 

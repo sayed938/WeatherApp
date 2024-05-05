@@ -6,7 +6,7 @@ data class Day(
     val avgtemp_f: Double,
     val avgvis_km: Double,
     val avgvis_miles: Double,
-    val condition: Condition,
+    val condition: Condition2,
     val daily_chance_of_rain: Int,
     val daily_chance_of_snow: Int,
     val daily_will_it_rain: Int,
@@ -21,4 +21,9 @@ data class Day(
     val totalprecip_mm: Double,
     val totalsnow_cm: Double,
     val uv: Double
+)
+data class Condition2(
+    val text: String,
+    val icon: String,
+    val code: Long,
 )

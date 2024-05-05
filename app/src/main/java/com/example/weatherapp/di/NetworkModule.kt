@@ -38,10 +38,4 @@ object NetworkModule {
     fun provideTempService(retrofit: Retrofit): TempApiService {
         return retrofit.create(TempApiService::class.java)
     }
-    /*@Provides
-    @Singleton
-    @Named("cityName")
-    fun provideCityName(city:String):String{
-        return city
-    }*/
 }

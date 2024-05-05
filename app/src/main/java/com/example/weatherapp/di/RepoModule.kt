@@ -14,6 +14,6 @@ import javax.inject.Named
 object RepoModule{
     @Provides
     fun provideTempRepo (tempService: TempApiService): GetTempRepo {
-        return TempRepoImpl(tempService, "cairo")
+        return TempRepoImpl(tempService, "Cairo")
     }
 }

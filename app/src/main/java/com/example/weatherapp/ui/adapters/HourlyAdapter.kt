@@ -1,14 +1,21 @@
 package com.example.weatherapp.ui.adapters
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.remote.Hour
 import com.example.weatherapp.R
 import com.squareup.picasso.Picasso
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Date
 import kotlin.math.roundToInt
 
 class HourlyAdapter(private var lsHourly: List<Hour>) :
@@ -30,12 +37,16 @@ class HourlyAdapter(private var lsHourly: List<Hour>) :
 
 
     class ViewHolderHour(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var hour: TextView = itemView.findViewById(R.id.today_time)
+        var hour: TextView = itemView.findViewById(R.id.today_time)
         private var conditionImg: ImageView = itemView.findViewById(R.id.conditionImgHourly)
         private var temp: TextView = itemView.findViewById(R.id.today_temp)
+
+        @RequiresApi(Build.VERSION_CODES.O)
         fun insertData(hour: String, img: String, temp: Double) {
-            this.hour.text = hour.split("\\s")[1].split("\\.")[0]
-            Picasso.get().load(img).into(conditionImg)
+            this.hour.text =
+                LocalDateTime.parse(hour, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
+                    .toLocalTime().toString()
+            Picasso.get().load("https:$img").into(conditionImg)
             this.temp.text = temp.roundToInt().toString()
 
         }
