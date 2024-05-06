@@ -33,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/refresh"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="45dp"
@@ -97,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="12dp"
                 android:text="29º"
                 android:textColor="@color/white"
                 android:textSize="15sp"
@@ -222,6 +223,7 @@
                 android:id="@+id/rc_today_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -244,7 +246,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/rc_today_temp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rc_next_days"
+                    android:id="@+id/rc_weekly"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/card_color"
@@ -278,6 +280,7 @@
                     android:text="Sunrise" />
 
                 <TextView
+                    android:id="@+id/sunrise"
                     style="@style/rise_set_time_style"
                     android:layout_marginStart="21dp"
                     android:text="5:30 am" />
@@ -288,6 +291,7 @@
                     android:text="Sunset" />
 
                 <TextView
+                    android:id="@+id/sunset"
                     style="@style/rise_set_time_style"
                     android:layout_marginStart="238dp"
                     android:text="6:21 pm" />
@@ -314,6 +318,7 @@
                     android:text="Moonrise" />
 
                 <TextView
+                    android:id="@+id/moonrise"
                     style="@style/rise_set_time_style"
                     android:layout_marginStart="21dp"
                     android:text=" 7:30 am" />
@@ -324,6 +329,7 @@
                     android:text="Moonset" />
 
                 <TextView
+                    android:id="@+id/moonset"
                     style="@style/rise_set_time_style"
                     android:layout_marginStart="238dp"
                     android:text="9:21 pm" />

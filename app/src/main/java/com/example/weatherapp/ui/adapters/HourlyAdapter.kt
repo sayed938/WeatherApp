@@ -1,5 +1,6 @@
 package com.example.weatherapp.ui.adapters
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,7 @@ class HourlyAdapter(private var lsHourly: List<Hour>) :
             LayoutInflater.from(parent.context).inflate(R.layout.today_temp_custom, parent, false)
         )
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolderHour, position: Int) {
         val hour = lsHourly[position]
         holder.apply {
@@ -41,13 +43,14 @@ class HourlyAdapter(private var lsHourly: List<Hour>) :
         private var conditionImg: ImageView = itemView.findViewById(R.id.conditionImgHourly)
         private var temp: TextView = itemView.findViewById(R.id.today_temp)
 
+        @SuppressLint("SetTextI18n")
         @RequiresApi(Build.VERSION_CODES.O)
         fun insertData(hour: String, img: String, temp: Double) {
             this.hour.text =
                 LocalDateTime.parse(hour, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
                     .toLocalTime().toString()
             Picasso.get().load("https:$img").into(conditionImg)
-            this.temp.text = temp.roundToInt().toString()
+            this.temp.text = "${temp.roundToInt()}º"
 
         }
     }
