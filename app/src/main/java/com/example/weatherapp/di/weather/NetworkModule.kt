@@ -1,4 +1,4 @@
-package com.example.weatherapp.di
+package com.example.weatherapp.di.weather
 
 import com.example.data.remote.TempApiService
 import com.example.weatherapp.PublicData
@@ -10,7 +10,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module

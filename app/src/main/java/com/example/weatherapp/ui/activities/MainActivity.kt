@@ -12,6 +12,7 @@ import com.example.domain.entity.remote.ForecastDay
 import com.example.domain.entity.remote.Hour
 import com.example.domain.entity.remote.WeatherModel
 import com.example.weatherapp.databinding.ActivityMainBinding
+import com.example.weatherapp.di.weather.RepoModule
 import com.example.weatherapp.ui.ActivitiesIntents
 import com.example.weatherapp.ui.IconAnimation
 import com.example.weatherapp.ui.TempVM
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getCityName()
         IconAnimation.firstLocationAnimation(binding.locationIcon)
         binding.listOfCities.setOnClickListener {
             mainToFavoriteIntent(savedInstanceState)
@@ -64,6 +66,16 @@ class MainActivity : AppCompatActivity() {
             weather?.forecast?.forecastday?.get(0)?.let { displayHourlyWeekly(it?.hour!!, obj!!) }
         } catch (e: Exception) {
             Log.d("sa-hour-adapter", weather?.forecast?.forecastday?.get(0)!!.hour.toString())
+        }
+    }
+
+    fun getCityName() {
+        var cityName = "Cairo"
+        cityName = intent.getStringExtra("city").toString()
+        if (intent.getIntExtra("flag", 0) == 1) {
+            RepoModule.city = cityName
+        } else {
+            RepoModule.city = "cairo"
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.domain.usecase
+package com.example.domain.usecase.weatherusecase
 
 import com.example.domain.repo.GetTempRepo
 

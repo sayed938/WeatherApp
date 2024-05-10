@@ -14,6 +14,8 @@ object ActivitiesIntents {
     }
     fun favoriteToMainIntent(favorite: FavoriteCities, option: Bundle?) {
         val intent = Intent(favorite, MainActivity::class.java)
+        intent.putExtra("city","London")
+        intent.putExtra("flag",1)
         startActivity(favorite, intent, option)
     }
 

@@ -301,13 +301,16 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="330dp"
                 android:layout_height="130dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="@color/card_color"
                 app:cardCornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3" >
+                app:layout_constraintTop_toBottomOf="@+id/cardView3"
+                app:layout_constraintVertical_bias="1.0">
+
                 <ImageView
                     style="@style/rise_set_img_style"
                     android:background="@drawable/moon" />

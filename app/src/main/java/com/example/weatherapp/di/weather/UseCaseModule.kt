@@ -1,7 +1,7 @@
-package com.example.weatherapp.di
+package com.example.weatherapp.di.weather
 
 import com.example.domain.repo.GetTempRepo
-import com.example.domain.usecase.TempUseCase
+import com.example.domain.usecase.weatherusecase.TempUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
