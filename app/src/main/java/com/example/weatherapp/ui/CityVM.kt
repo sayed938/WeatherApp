@@ -24,6 +24,8 @@ class CityVM @Inject constructor(private val cityUseCase: CityUseCase) : ViewMod
         viewModelScope.launch {
             try {
                 _cityStateFlow.value = cityUseCase()
+                Log.d("sa-city", cityUseCase().size.toString())
+
 
             } catch (e: Exception) {
                 Log.d("sa-city", e.message.toString())

@@ -5,18 +5,20 @@ import android.os.Bundle
 import androidx.core.content.ContextCompat.startActivity
 import com.example.weatherapp.ui.activities.FavoriteCities
 import com.example.weatherapp.ui.activities.MainActivity
+import com.example.weatherapp.ui.activities.SearchCities
 
 object ActivitiesIntents {
 
-    fun mainToFavoriteIntent(main: MainActivity, option: Bundle?) {
+    fun mainToRecentIntent(main: MainActivity, option: Bundle?) {
         val intent = Intent(main, FavoriteCities::class.java)
         startActivity(main, intent, option)
     }
-    fun favoriteToMainIntent(favorite: FavoriteCities, option: Bundle?) {
+    fun recentToMainIntent(favorite: FavoriteCities, option: Bundle?) {
         val intent = Intent(favorite, MainActivity::class.java)
-        intent.putExtra("city","London")
-        intent.putExtra("flag",1)
         startActivity(favorite, intent, option)
+    }
+    fun recentToSearchIntent(recent:FavoriteCities,option: Bundle?){
+        startActivity(recent,Intent(recent, SearchCities::class.java),option)
     }
 
 }

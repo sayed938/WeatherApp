@@ -23,23 +23,12 @@
 
             <ImageView
                 android:id="@+id/list_of_cities"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="45dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="32dp"
                 android:background="@drawable/add_city"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.044"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/refresh"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="45dp"
-                android:background="@drawable/reload_icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintHorizontal_bias="0.896"
                 app:layout_constraintStart_toEndOf="@+id/location_icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,24 +36,24 @@
                 android:id="@+id/city_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="32dp"
                 android:text="Cairo"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/list_of_cities"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/location_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/icon_location"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.027"
+                app:layout_constraintHorizontal_bias="0.023"
                 app:layout_constraintStart_toEndOf="@+id/city_name"
                 app:layout_constraintTop_toTopOf="parent" />
 

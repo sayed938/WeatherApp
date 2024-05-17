@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.entity.local.RecentCityModel
 import com.example.domain.entity.remote.ForecastDay
 import com.example.domain.entity.remote.Hour
 import com.example.domain.entity.remote.WeatherModel
@@ -15,6 +16,7 @@ import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.di.weather.RepoModule
 import com.example.weatherapp.ui.ActivitiesIntents
 import com.example.weatherapp.ui.IconAnimation
+import com.example.weatherapp.ui.RecentCityVM
 import com.example.weatherapp.ui.TempVM
 import com.example.weatherapp.ui.adapters.HourlyAdapter
 import com.example.weatherapp.ui.adapters.WeeklyAdapter
@@ -28,6 +30,8 @@ import kotlin.math.roundToInt
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val weatherModel: TempVM by viewModels()
+    private val recentCity: RecentCityVM by viewModels()
+
     private lateinit var binding: ActivityMainBinding
 
     @SuppressLint("UnsafeIntentLaunch")
@@ -41,10 +45,6 @@ class MainActivity : AppCompatActivity() {
             mainToFavoriteIntent(savedInstanceState)
         }
         getViews()
-
-        binding.refresh.setOnClickListener {
-            getViews()
-        }
     }
 
     private fun getViews() {
@@ -57,8 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private suspend fun callViews(weather: WeatherModel?) {
-        delay(1000)
+    private fun callViews(weather: WeatherModel?) {
         displayCurrentTemp(weather)
         displayCurrentWeather(weather)
         try {
@@ -69,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun getCityName() {
+    private fun getCityName() {
         var cityName = "Cairo"
         cityName = intent.getStringExtra("city").toString()
         if (intent.getIntExtra("flag", 0) == 1) {
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mainToFavoriteIntent(option: Bundle?) {
-        ActivitiesIntents.mainToFavoriteIntent(this, option)
+        ActivitiesIntents.mainToRecentIntent(this, option)
     }
 
     @SuppressLint("SetTextI18n")

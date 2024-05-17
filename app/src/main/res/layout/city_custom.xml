@@ -30,14 +30,6 @@
         android:textSize="15sp"
         android:typeface="serif" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/delete_icon"
-        android:layout_gravity="bottom"
-        android:layout_margin="5dp"
-        />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
