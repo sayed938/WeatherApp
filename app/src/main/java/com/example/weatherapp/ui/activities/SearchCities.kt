@@ -1,9 +1,6 @@
 package com.example.weatherapp.ui.activities
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.widget.SearchView.OnQueryTextListener
 
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -11,21 +8,21 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.remote.cities.City
-import com.example.domain.entity.remote.cities.CityItem
 import com.example.weatherapp.databinding.ActivitySearchCitiesBinding
-import com.example.weatherapp.ui.CityVM
+import com.example.weatherapp.ui.viewmodels.CityVM
 import com.example.weatherapp.ui.adapters.SearchAdapter
+import com.example.weatherapp.ui.viewmodels.RecentCityVM
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.Locale
 
 @AndroidEntryPoint
 class SearchCities : AppCompatActivity() {
     private lateinit var binding: ActivitySearchCitiesBinding
     private val cityViewModel: CityVM by viewModels()
+    private val recentCity: RecentCityVM by viewModels()
     private lateinit var lsCity: City
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +52,6 @@ class SearchCities : AppCompatActivity() {
                 val newLsCity = lsCity.filter {
                     it.city != null && it.city.toLowerCase().startsWith(newText!!.toLowerCase())
                 }
-
                 binding.searchRc.adapter = SearchAdapter(newLsCity)
                 return true
             }

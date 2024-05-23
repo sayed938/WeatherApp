@@ -1,6 +1,5 @@
 package com.example.weatherapp.ui.adapters
 
-import android.R.attr.data
 import android.annotation.SuppressLint
 import android.os.Build
 import android.view.LayoutInflater
@@ -10,8 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.domain.entity.remote.Day
-import com.example.domain.entity.remote.ForecastDay
+import com.example.domain.entity.remote.weather.ForecastDay
 import com.example.weatherapp.R
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat

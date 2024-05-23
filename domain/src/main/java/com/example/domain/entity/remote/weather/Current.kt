@@ -1,4 +1,4 @@
-package com.example.domain.entity.remote
+package com.example.domain.entity.remote.weather
 
 data class Current(
     val cloud: Int,

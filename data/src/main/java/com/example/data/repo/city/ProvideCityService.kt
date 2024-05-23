@@ -1,9 +1,8 @@
-package com.example.data.repo
+package com.example.data.repo.city
 
-import android.util.Log
 import com.example.data.PublicData
 import com.example.data.remote.TempApiService
-import com.example.domain.repo.GetCityRepo
+import com.example.domain.repo.cityrepo.GetCityRepo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

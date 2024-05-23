@@ -8,39 +8,15 @@
     app:cardCornerRadius="15dp">
 
     <TextView
+        android:id="@+id/recentCityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="20dp"
         android:text="London"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Rainy"
-        android:textColor="@color/text_color"
-        android:textSize="15sp"
-        android:typeface="serif" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="9º"
-        android:textColor="@color/white"
-        android:textSize="17sp" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="right"
-        android:background="@drawable/cloudy" />
 </androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.example.domain.repo
+package com.example.domain.repo.cityrepo
 
 import com.example.domain.entity.remote.cities.City
 

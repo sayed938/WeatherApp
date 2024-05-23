@@ -9,14 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.domain.entity.remote.Hour
+import com.example.domain.entity.remote.weather.Hour
 import com.example.weatherapp.R
 import com.squareup.picasso.Picasso
-import java.text.DateFormat
-import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Date
 import kotlin.math.roundToInt
 
 class HourlyAdapter(private var lsHourly: List<Hour>) :

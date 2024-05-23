@@ -15,6 +15,7 @@ import com.example.domain.entity.remote.cities.CityItem
 import com.example.weatherapp.R
 import com.example.weatherapp.ui.ActivitiesIntents
 import com.example.weatherapp.ui.activities.MainActivity
+import com.example.weatherapp.ui.viewmodels.RecentCityVM
 import dagger.hilt.android.qualifiers.ApplicationContext
 
 class SearchAdapter(private val cityLS: List<CityItem>) :
@@ -36,6 +37,7 @@ class SearchAdapter(private val cityLS: List<CityItem>) :
             LayoutInflater.from(parent.context).inflate(R.layout.search_rc_custom, parent, false)
         )
     }
+
     override fun getItemCount(): Int = cityLS?.size!!
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (cityLS[position].city == null) {

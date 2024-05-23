@@ -8,21 +8,19 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.domain.entity.local.RecentCityModel
-import com.example.domain.entity.remote.ForecastDay
-import com.example.domain.entity.remote.Hour
-import com.example.domain.entity.remote.WeatherModel
+import com.example.domain.entity.remote.weather.ForecastDay
+import com.example.domain.entity.remote.weather.Hour
+import com.example.domain.entity.remote.weather.WeatherModel
 import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.di.weather.RepoModule
 import com.example.weatherapp.ui.ActivitiesIntents
 import com.example.weatherapp.ui.IconAnimation
-import com.example.weatherapp.ui.RecentCityVM
-import com.example.weatherapp.ui.TempVM
 import com.example.weatherapp.ui.adapters.HourlyAdapter
 import com.example.weatherapp.ui.adapters.WeeklyAdapter
+import com.example.weatherapp.ui.viewmodels.RecentCityVM
+import com.example.weatherapp.ui.viewmodels.TempVM
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
@@ -31,7 +29,6 @@ import kotlin.math.roundToInt
 class MainActivity : AppCompatActivity() {
     private val weatherModel: TempVM by viewModels()
     private val recentCity: RecentCityVM by viewModels()
-
     private lateinit var binding: ActivityMainBinding
 
     @SuppressLint("UnsafeIntentLaunch")
@@ -40,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getCityName()
+        //Intents
         IconAnimation.firstLocationAnimation(binding.locationIcon)
         binding.listOfCities.setOnClickListener {
             mainToFavoriteIntent(savedInstanceState)
@@ -73,8 +71,9 @@ class MainActivity : AppCompatActivity() {
         cityName = intent.getStringExtra("city").toString()
         if (intent.getIntExtra("flag", 0) == 1) {
             RepoModule.city = cityName
+            recentCity.saveCity(cityName)
         } else {
-            RepoModule.city = "cairo"
+            RepoModule.city = "Cairo"
         }
     }
 
@@ -106,7 +105,6 @@ class MainActivity : AppCompatActivity() {
             binding.moonset.text = currentWeather.forecast.forecastday.get(0).astro.moonset
         } else
             binding.progressBar.visibility = View.VISIBLE
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -127,5 +125,4 @@ class MainActivity : AppCompatActivity() {
         binding.rcTodayTemp.adapter = HourlyAdapter(lsHourly)
         binding.rcWeekly.adapter = WeeklyAdapter(lsWeekly)
     }
-
 }
