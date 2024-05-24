@@ -2,8 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="70dp"
     android:layout_margin="15dp"
+    android:id="@+id/recentCityCardView"
     android:backgroundTint="@color/card_color"
     app:cardCornerRadius="15dp">
 
@@ -15,7 +16,7 @@
         android:layout_marginStart="10dp"
         android:text="London"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="serif" />
 

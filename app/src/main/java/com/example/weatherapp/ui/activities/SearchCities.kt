@@ -29,7 +29,6 @@ class SearchCities : AppCompatActivity() {
         binding = ActivitySearchCitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.searchView.clearFocus()
-
         binding.searchRc.layoutManager = LinearLayoutManager(this)
         lifecycleScope.launch {
             cityViewModel.cityFlow.collect {

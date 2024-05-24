@@ -1,13 +1,17 @@
 package com.example.weatherapp.ui.viewmodels
 
+import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.cityusecase.RecentCityUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import java.util.Vector
 import javax.inject.Inject
 
 
@@ -18,15 +22,12 @@ class RecentCityVM @Inject constructor(
 ) : ViewModel() {
     private val _recent: MutableStateFlow<List<String>> = MutableStateFlow(listOf())
     val newRecent: StateFlow<List<String>> = _recent
-    val editor = shared.edit()
+    private val editor = shared.edit()
 
-    init {
-        getCities()
-    }
-
-    private fun getCities() {
+     fun getCities() {
         viewModelScope.launch {
-            _recent.value = recentUseCase()
+            Log.d("sa-favv",recentUseCase().size.toString())
+            _recent.value=recentUseCase()
         }
     }
 

@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.data.local.SharedPreferenceModule
 import com.example.domain.entity.remote.weather.ForecastDay
 import com.example.domain.entity.remote.weather.Hour
 import com.example.domain.entity.remote.weather.WeatherModel
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         if (intent.getIntExtra("flag", 0) == 1) {
             RepoModule.city = cityName
             recentCity.saveCity(cityName)
+            recentCity.getCities()
         } else {
             RepoModule.city = "Cairo"
         }
